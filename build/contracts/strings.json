@@ -12,14 +12,14 @@
     "absolutePath": "/Users/cory/Code/pan/scammer-contracts/contracts/helpers/strings.sol",
     "exportedSymbols": {
       "strings": [
-        2059
+        2055
       ]
     },
-    "id": 2060,
+    "id": 2056,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1947,
+        "id": 1943,
         "literals": [
           "solidity",
           "^",
@@ -35,23 +35,23 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 2059,
+        "id": 2055,
         "linearizedBaseContracts": [
-          2059
+          2055
         ],
         "name": "strings",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "strings.slice",
-            "id": 1952,
+            "id": 1948,
             "members": [
               {
                 "constant": false,
-                "id": 1949,
+                "id": 1945,
                 "name": "_len",
                 "nodeType": "VariableDeclaration",
-                "scope": 1952,
+                "scope": 1948,
                 "src": "189:9:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -60,7 +60,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1948,
+                  "id": 1944,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "189:4:5",
@@ -74,10 +74,10 @@
               },
               {
                 "constant": false,
-                "id": 1951,
+                "id": 1947,
                 "name": "_ptr",
                 "nodeType": "VariableDeclaration",
-                "scope": 1952,
+                "scope": 1948,
                 "src": "208:9:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -86,7 +86,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1950,
+                  "id": 1946,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "208:4:5",
@@ -101,19 +101,19 @@
             ],
             "name": "slice",
             "nodeType": "StructDefinition",
-            "scope": 2059,
+            "scope": 2055,
             "src": "166:58:5",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 1991,
+              "id": 1987,
               "nodeType": "Block",
               "src": "290:489:5",
               "statements": [
                 {
                   "body": {
-                    "id": 1977,
+                    "id": 1973,
                     "nodeType": "Block",
                     "src": "379:136:5",
                     "statements": [
@@ -121,7 +121,7 @@
                         "externalReferences": [
                           {
                             "src": {
-                              "declaration": 1956,
+                              "declaration": 1952,
                               "isOffset": false,
                               "isSlot": false,
                               "src": "439:3:5",
@@ -130,7 +130,7 @@
                           },
                           {
                             "dest": {
-                              "declaration": 1954,
+                              "declaration": 1950,
                               "isOffset": false,
                               "isSlot": false,
                               "src": "427:4:5",
@@ -138,7 +138,7 @@
                             }
                           }
                         ],
-                        "id": 1968,
+                        "id": 1964,
                         "nodeType": "InlineAssembly",
                         "operations": "{ mstore(dest, mload(src)) }",
                         "src": "393:65:5"
@@ -146,18 +146,18 @@
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 1971,
+                          "id": 1967,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
                             "argumentTypes": null,
-                            "id": 1969,
+                            "id": 1965,
                             "name": "dest",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1954,
+                            "referencedDeclaration": 1950,
                             "src": "471:4:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -169,7 +169,7 @@
                           "rightHandSide": {
                             "argumentTypes": null,
                             "hexValue": "3332",
-                            "id": 1970,
+                            "id": 1966,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -190,25 +190,25 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 1972,
+                        "id": 1968,
                         "nodeType": "ExpressionStatement",
                         "src": "471:10:5"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 1975,
+                          "id": 1971,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
                             "argumentTypes": null,
-                            "id": 1973,
+                            "id": 1969,
                             "name": "src",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1956,
+                            "referencedDeclaration": 1952,
                             "src": "495:3:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -220,7 +220,7 @@
                           "rightHandSide": {
                             "argumentTypes": null,
                             "hexValue": "3332",
-                            "id": 1974,
+                            "id": 1970,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -241,7 +241,7 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 1976,
+                        "id": 1972,
                         "nodeType": "ExpressionStatement",
                         "src": "495:9:5"
                       }
@@ -253,18 +253,18 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1963,
+                    "id": 1959,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "argumentTypes": null,
-                      "id": 1961,
+                      "id": 1957,
                       "name": "len",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1958,
+                      "referencedDeclaration": 1954,
                       "src": "357:3:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -276,7 +276,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "3332",
-                      "id": 1962,
+                      "id": 1958,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -297,23 +297,23 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1978,
+                  "id": 1974,
                   "initializationExpression": null,
                   "loopExpression": {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 1966,
+                      "id": 1962,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 1964,
+                        "id": 1960,
                         "name": "len",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1958,
+                        "referencedDeclaration": 1954,
                         "src": "368:3:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -325,7 +325,7 @@
                       "rightHandSide": {
                         "argumentTypes": null,
                         "hexValue": "3332",
-                        "id": 1965,
+                        "id": 1961,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -346,7 +346,7 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 1967,
+                    "id": 1963,
                     "nodeType": "ExpressionStatement",
                     "src": "368:9:5"
                   },
@@ -355,15 +355,15 @@
                 },
                 {
                   "assignments": [
-                    1980
+                    1976
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1980,
+                      "id": 1976,
                       "name": "mask",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1991,
+                      "scope": 1987,
                       "src": "557:9:5",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -372,7 +372,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1979,
+                        "id": 1975,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "557:4:5",
@@ -385,14 +385,14 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1989,
+                  "id": 1985,
                   "initialValue": {
                     "argumentTypes": null,
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1988,
+                    "id": 1984,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -403,7 +403,7 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 1986,
+                      "id": 1982,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -411,7 +411,7 @@
                       "leftExpression": {
                         "argumentTypes": null,
                         "hexValue": "323536",
-                        "id": 1981,
+                        "id": 1977,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -437,7 +437,7 @@
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 1984,
+                            "id": 1980,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -445,7 +445,7 @@
                             "leftExpression": {
                               "argumentTypes": null,
                               "hexValue": "3332",
-                              "id": 1982,
+                              "id": 1978,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -464,11 +464,11 @@
                             "operator": "-",
                             "rightExpression": {
                               "argumentTypes": null,
-                              "id": 1983,
+                              "id": 1979,
                               "name": "len",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1958,
+                              "referencedDeclaration": 1954,
                               "src": "582:3:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -482,7 +482,7 @@
                             }
                           }
                         ],
-                        "id": 1985,
+                        "id": 1981,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
@@ -506,7 +506,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "31",
-                      "id": 1987,
+                      "id": 1983,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -534,7 +534,7 @@
                   "externalReferences": [
                     {
                       "src": {
-                        "declaration": 1956,
+                        "declaration": 1952,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "648:3:5",
@@ -543,7 +543,7 @@
                     },
                     {
                       "mask": {
-                        "declaration": 1980,
+                        "declaration": 1976,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "658:4:5",
@@ -552,7 +552,7 @@
                     },
                     {
                       "dest": {
-                        "declaration": 1954,
+                        "declaration": 1950,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "703:4:5",
@@ -561,7 +561,7 @@
                     },
                     {
                       "mask": {
-                        "declaration": 1980,
+                        "declaration": 1976,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "710:4:5",
@@ -570,7 +570,7 @@
                     },
                     {
                       "dest": {
-                        "declaration": 1954,
+                        "declaration": 1950,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "735:4:5",
@@ -578,7 +578,7 @@
                       }
                     }
                   ],
-                  "id": 1990,
+                  "id": 1986,
                   "nodeType": "InlineAssembly",
                   "operations": "{\n    let srcpart := and(mload(src), not(mask))\n    let destpart := and(mload(dest), mask)\n    mstore(dest, or(destpart, srcpart))\n}",
                   "src": "600:173:5"
@@ -586,22 +586,22 @@
               ]
             },
             "documentation": null,
-            "id": 1992,
+            "id": 1988,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "memcpy",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1959,
+              "id": 1955,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1954,
+                  "id": 1950,
                   "name": "dest",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1992,
+                  "scope": 1988,
                   "src": "246:9:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -610,7 +610,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1953,
+                    "id": 1949,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "246:4:5",
@@ -624,10 +624,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1956,
+                  "id": 1952,
                   "name": "src",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1992,
+                  "scope": 1988,
                   "src": "257:8:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -636,7 +636,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1955,
+                    "id": 1951,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "257:4:5",
@@ -650,10 +650,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1958,
+                  "id": 1954,
                   "name": "len",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1992,
+                  "scope": 1988,
                   "src": "267:8:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -662,7 +662,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1957,
+                    "id": 1953,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "267:4:5",
@@ -678,12 +678,12 @@
               "src": "245:31:5"
             },
             "returnParameters": {
-              "id": 1960,
+              "id": 1956,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "290:0:5"
             },
-            "scope": 2059,
+            "scope": 2055,
             "src": "230:549:5",
             "stateMutability": "pure",
             "superFunction": null,
@@ -691,21 +691,21 @@
           },
           {
             "body": {
-              "id": 2011,
+              "id": 2007,
               "nodeType": "Block",
               "src": "1053:136:5",
               "statements": [
                 {
                   "assignments": [
-                    2000
+                    1996
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2000,
+                      "id": 1996,
                       "name": "ptr",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2011,
+                      "scope": 2007,
                       "src": "1063:8:5",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -714,7 +714,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1999,
+                        "id": 1995,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "1063:4:5",
@@ -727,7 +727,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2001,
+                  "id": 1997,
                   "initialValue": null,
                   "nodeType": "VariableDeclarationStatement",
                   "src": "1063:8:5"
@@ -736,7 +736,7 @@
                   "externalReferences": [
                     {
                       "ptr": {
-                        "declaration": 2000,
+                        "declaration": 1996,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "1104:3:5",
@@ -745,7 +745,7 @@
                     },
                     {
                       "self": {
-                        "declaration": 1994,
+                        "declaration": 1990,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "1115:4:5",
@@ -753,7 +753,7 @@
                       }
                     }
                   ],
-                  "id": 2002,
+                  "id": 1998,
                   "nodeType": "InlineAssembly",
                   "operations": "{ ptr := add(self, 0x20) }",
                   "src": "1081:55:5"
@@ -769,11 +769,11 @@
                           "arguments": [
                             {
                               "argumentTypes": null,
-                              "id": 2005,
+                              "id": 2001,
                               "name": "self",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1994,
+                              "referencedDeclaration": 1990,
                               "src": "1164:4:5",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -788,7 +788,7 @@
                                 "typeString": "string memory"
                               }
                             ],
-                            "id": 2004,
+                            "id": 2000,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -801,7 +801,7 @@
                             },
                             "typeName": "bytes"
                           },
-                          "id": 2006,
+                          "id": 2002,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -815,7 +815,7 @@
                             "typeString": "bytes memory"
                           }
                         },
-                        "id": 2007,
+                        "id": 2003,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -831,11 +831,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 2008,
+                        "id": 2004,
                         "name": "ptr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2000,
+                        "referencedDeclaration": 1996,
                         "src": "1178:3:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -854,18 +854,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2003,
+                      "id": 1999,
                       "name": "slice",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1952,
+                      "referencedDeclaration": 1948,
                       "src": "1152:5:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_slice_$1952_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_slice_$1948_storage_ptr_$",
                         "typeString": "type(struct strings.slice storage pointer)"
                       }
                     },
-                    "id": 2009,
+                    "id": 2005,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -875,34 +875,34 @@
                     "nodeType": "FunctionCall",
                     "src": "1152:30:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_slice_$1952_memory",
+                      "typeIdentifier": "t_struct$_slice_$1948_memory",
                       "typeString": "struct strings.slice memory"
                     }
                   },
-                  "functionReturnParameters": 1998,
-                  "id": 2010,
+                  "functionReturnParameters": 1994,
+                  "id": 2006,
                   "nodeType": "Return",
                   "src": "1145:37:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 2012,
+            "id": 2008,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "toSlice",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1995,
+              "id": 1991,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1994,
+                  "id": 1990,
                   "name": "self",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2012,
+                  "scope": 2008,
                   "src": "996:18:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -911,7 +911,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1993,
+                    "id": 1989,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "996:6:5",
@@ -927,31 +927,31 @@
               "src": "995:20:5"
             },
             "returnParameters": {
-              "id": 1998,
+              "id": 1994,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1997,
+                  "id": 1993,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2012,
+                  "scope": 2008,
                   "src": "1039:12:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_slice_$1952_memory_ptr",
+                    "typeIdentifier": "t_struct$_slice_$1948_memory_ptr",
                     "typeString": "struct strings.slice"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 1996,
+                    "id": 1992,
                     "name": "slice",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 1952,
+                    "referencedDeclaration": 1948,
                     "src": "1039:5:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_slice_$1952_storage_ptr",
+                      "typeIdentifier": "t_struct$_slice_$1948_storage_ptr",
                       "typeString": "struct strings.slice"
                     }
                   },
@@ -961,7 +961,7 @@
               ],
               "src": "1038:14:5"
             },
-            "scope": 2059,
+            "scope": 2055,
             "src": "979:210:5",
             "stateMutability": "pure",
             "superFunction": null,
@@ -969,21 +969,21 @@
           },
           {
             "body": {
-              "id": 2057,
+              "id": 2053,
               "nodeType": "Block",
               "src": "1569:282:5",
               "statements": [
                 {
                   "assignments": [
-                    2022
+                    2018
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2022,
+                      "id": 2018,
                       "name": "ret",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2057,
+                      "scope": 2053,
                       "src": "1579:17:5",
                       "stateVariable": false,
                       "storageLocation": "memory",
@@ -992,7 +992,7 @@
                         "typeString": "string"
                       },
                       "typeName": {
-                        "id": 2021,
+                        "id": 2017,
                         "name": "string",
                         "nodeType": "ElementaryTypeName",
                         "src": "1579:6:5",
@@ -1005,7 +1005,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2031,
+                  "id": 2027,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
@@ -1015,7 +1015,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 2029,
+                        "id": 2025,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1024,25 +1024,25 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 2025,
+                            "id": 2021,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2014,
+                            "referencedDeclaration": 2010,
                             "src": "1610:4:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_slice_$1952_memory_ptr",
+                              "typeIdentifier": "t_struct$_slice_$1948_memory_ptr",
                               "typeString": "struct strings.slice memory"
                             }
                           },
-                          "id": 2026,
+                          "id": 2022,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "_len",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1949,
+                          "referencedDeclaration": 1945,
                           "src": "1610:9:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1055,25 +1055,25 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 2027,
+                            "id": 2023,
                             "name": "other",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2016,
+                            "referencedDeclaration": 2012,
                             "src": "1622:5:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_slice_$1952_memory_ptr",
+                              "typeIdentifier": "t_struct$_slice_$1948_memory_ptr",
                               "typeString": "struct strings.slice memory"
                             }
                           },
-                          "id": 2028,
+                          "id": 2024,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "_len",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1949,
+                          "referencedDeclaration": 1945,
                           "src": "1622:10:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1094,7 +1094,7 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2024,
+                      "id": 2020,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1106,7 +1106,7 @@
                         "typeString": "function (uint256) pure returns (string memory)"
                       },
                       "typeName": {
-                        "id": 2023,
+                        "id": 2019,
                         "name": "string",
                         "nodeType": "ElementaryTypeName",
                         "src": "1603:6:5",
@@ -1116,7 +1116,7 @@
                         }
                       }
                     },
-                    "id": 2030,
+                    "id": 2026,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1135,15 +1135,15 @@
                 },
                 {
                   "assignments": [
-                    2033
+                    2029
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2033,
+                      "id": 2029,
                       "name": "retptr",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2057,
+                      "scope": 2053,
                       "src": "1643:11:5",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1152,7 +1152,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2032,
+                        "id": 2028,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "1643:4:5",
@@ -1165,7 +1165,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2034,
+                  "id": 2030,
                   "initialValue": null,
                   "nodeType": "VariableDeclarationStatement",
                   "src": "1643:11:5"
@@ -1174,7 +1174,7 @@
                   "externalReferences": [
                     {
                       "retptr": {
-                        "declaration": 2033,
+                        "declaration": 2029,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "1687:6:5",
@@ -1183,7 +1183,7 @@
                     },
                     {
                       "ret": {
-                        "declaration": 2022,
+                        "declaration": 2018,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "1701:3:5",
@@ -1191,7 +1191,7 @@
                       }
                     }
                   ],
-                  "id": 2035,
+                  "id": 2031,
                   "nodeType": "InlineAssembly",
                   "operations": "{ retptr := add(ret, 32) }",
                   "src": "1664:55:5"
@@ -1202,11 +1202,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2037,
+                        "id": 2033,
                         "name": "retptr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2033,
+                        "referencedDeclaration": 2029,
                         "src": "1735:6:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1217,25 +1217,25 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 2038,
+                          "id": 2034,
                           "name": "self",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2014,
+                          "referencedDeclaration": 2010,
                           "src": "1743:4:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_slice_$1952_memory_ptr",
+                            "typeIdentifier": "t_struct$_slice_$1948_memory_ptr",
                             "typeString": "struct strings.slice memory"
                           }
                         },
-                        "id": 2039,
+                        "id": 2035,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "_ptr",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1951,
+                        "referencedDeclaration": 1947,
                         "src": "1743:9:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1246,25 +1246,25 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 2040,
+                          "id": 2036,
                           "name": "self",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2014,
+                          "referencedDeclaration": 2010,
                           "src": "1754:4:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_slice_$1952_memory_ptr",
+                            "typeIdentifier": "t_struct$_slice_$1948_memory_ptr",
                             "typeString": "struct strings.slice memory"
                           }
                         },
-                        "id": 2041,
+                        "id": 2037,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "_len",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1949,
+                        "referencedDeclaration": 1945,
                         "src": "1754:9:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1287,18 +1287,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2036,
+                      "id": 2032,
                       "name": "memcpy",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1992,
+                      "referencedDeclaration": 1988,
                       "src": "1728:6:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256,uint256) pure"
                       }
                     },
-                    "id": 2042,
+                    "id": 2038,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1312,7 +1312,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2043,
+                  "id": 2039,
                   "nodeType": "ExpressionStatement",
                   "src": "1728:36:5"
                 },
@@ -1326,18 +1326,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 2048,
+                        "id": 2044,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 2045,
+                          "id": 2041,
                           "name": "retptr",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2033,
+                          "referencedDeclaration": 2029,
                           "src": "1781:6:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1350,25 +1350,25 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 2046,
+                            "id": 2042,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2014,
+                            "referencedDeclaration": 2010,
                             "src": "1790:4:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_slice_$1952_memory_ptr",
+                              "typeIdentifier": "t_struct$_slice_$1948_memory_ptr",
                               "typeString": "struct strings.slice memory"
                             }
                           },
-                          "id": 2047,
+                          "id": 2043,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "_len",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1949,
+                          "referencedDeclaration": 1945,
                           "src": "1790:9:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1385,25 +1385,25 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 2049,
+                          "id": 2045,
                           "name": "other",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2016,
+                          "referencedDeclaration": 2012,
                           "src": "1801:5:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_slice_$1952_memory_ptr",
+                            "typeIdentifier": "t_struct$_slice_$1948_memory_ptr",
                             "typeString": "struct strings.slice memory"
                           }
                         },
-                        "id": 2050,
+                        "id": 2046,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "_ptr",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1951,
+                        "referencedDeclaration": 1947,
                         "src": "1801:10:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1414,25 +1414,25 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 2051,
+                          "id": 2047,
                           "name": "other",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2016,
+                          "referencedDeclaration": 2012,
                           "src": "1813:5:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_slice_$1952_memory_ptr",
+                            "typeIdentifier": "t_struct$_slice_$1948_memory_ptr",
                             "typeString": "struct strings.slice memory"
                           }
                         },
-                        "id": 2052,
+                        "id": 2048,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "_len",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1949,
+                        "referencedDeclaration": 1945,
                         "src": "1813:10:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1455,18 +1455,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2044,
+                      "id": 2040,
                       "name": "memcpy",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1992,
+                      "referencedDeclaration": 1988,
                       "src": "1774:6:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256,uint256) pure"
                       }
                     },
-                    "id": 2053,
+                    "id": 2049,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1480,64 +1480,64 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2054,
+                  "id": 2050,
                   "nodeType": "ExpressionStatement",
                   "src": "1774:50:5"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2055,
+                    "id": 2051,
                     "name": "ret",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 2022,
+                    "referencedDeclaration": 2018,
                     "src": "1841:3:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 2020,
-                  "id": 2056,
+                  "functionReturnParameters": 2016,
+                  "id": 2052,
                   "nodeType": "Return",
                   "src": "1834:10:5"
                 }
               ]
             },
             "documentation": null,
-            "id": 2058,
+            "id": 2054,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "concat",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2017,
+              "id": 2013,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2014,
+                  "id": 2010,
                   "name": "self",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2058,
+                  "scope": 2054,
                   "src": "1492:17:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_slice_$1952_memory_ptr",
+                    "typeIdentifier": "t_struct$_slice_$1948_memory_ptr",
                     "typeString": "struct strings.slice"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 2013,
+                    "id": 2009,
                     "name": "slice",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 1952,
+                    "referencedDeclaration": 1948,
                     "src": "1492:5:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_slice_$1952_storage_ptr",
+                      "typeIdentifier": "t_struct$_slice_$1948_storage_ptr",
                       "typeString": "struct strings.slice"
                     }
                   },
@@ -1546,26 +1546,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 2016,
+                  "id": 2012,
                   "name": "other",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2058,
+                  "scope": 2054,
                   "src": "1511:18:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_slice_$1952_memory_ptr",
+                    "typeIdentifier": "t_struct$_slice_$1948_memory_ptr",
                     "typeString": "struct strings.slice"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 2015,
+                    "id": 2011,
                     "name": "slice",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 1952,
+                    "referencedDeclaration": 1948,
                     "src": "1511:5:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_slice_$1952_storage_ptr",
+                      "typeIdentifier": "t_struct$_slice_$1948_storage_ptr",
                       "typeString": "struct strings.slice"
                     }
                   },
@@ -1576,15 +1576,15 @@
               "src": "1491:39:5"
             },
             "returnParameters": {
-              "id": 2020,
+              "id": 2016,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2019,
+                  "id": 2015,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2058,
+                  "scope": 2054,
                   "src": "1554:13:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1593,7 +1593,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 2018,
+                    "id": 2014,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1554:6:5",
@@ -1608,14 +1608,14 @@
               ],
               "src": "1553:15:5"
             },
-            "scope": 2059,
+            "scope": 2055,
             "src": "1476:375:5",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 2060,
+        "scope": 2056,
         "src": "144:1709:5"
       }
     ],
@@ -1626,7 +1626,7 @@
       "absolutePath": "/Users/cory/Code/pan/scammer-contracts/contracts/helpers/strings.sol",
       "exportedSymbols": {
         "strings": [
-          2059
+          2055
         ]
       }
     },
@@ -1640,7 +1640,7 @@
             ".0"
           ]
         },
-        "id": 1947,
+        "id": 1943,
         "name": "PragmaDirective",
         "src": "119:23:5"
       },
@@ -1656,17 +1656,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            2059
+            2055
           ],
           "name": "strings",
-          "scope": 2060
+          "scope": 2056
         },
         "children": [
           {
             "attributes": {
               "canonicalName": "strings.slice",
               "name": "slice",
-              "scope": 2059,
+              "scope": 2055,
               "visibility": "public"
             },
             "children": [
@@ -1674,7 +1674,7 @@
                 "attributes": {
                   "constant": false,
                   "name": "_len",
-                  "scope": 1952,
+                  "scope": 1948,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -1687,12 +1687,12 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 1948,
+                    "id": 1944,
                     "name": "ElementaryTypeName",
                     "src": "189:4:5"
                   }
                 ],
-                "id": 1949,
+                "id": 1945,
                 "name": "VariableDeclaration",
                 "src": "189:9:5"
               },
@@ -1700,7 +1700,7 @@
                 "attributes": {
                   "constant": false,
                   "name": "_ptr",
-                  "scope": 1952,
+                  "scope": 1948,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -1713,17 +1713,17 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 1950,
+                    "id": 1946,
                     "name": "ElementaryTypeName",
                     "src": "208:4:5"
                   }
                 ],
-                "id": 1951,
+                "id": 1947,
                 "name": "VariableDeclaration",
                 "src": "208:9:5"
               }
             ],
-            "id": 1952,
+            "id": 1948,
             "name": "StructDefinition",
             "src": "166:58:5"
           },
@@ -1737,7 +1737,7 @@
                 null
               ],
               "name": "memcpy",
-              "scope": 2059,
+              "scope": 2055,
               "stateMutability": "pure",
               "superFunction": null,
               "visibility": "private"
@@ -1749,7 +1749,59 @@
                     "attributes": {
                       "constant": false,
                       "name": "dest",
-                      "scope": 1992,
+                      "scope": 1988,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 1949,
+                        "name": "ElementaryTypeName",
+                        "src": "246:4:5"
+                      }
+                    ],
+                    "id": 1950,
+                    "name": "VariableDeclaration",
+                    "src": "246:9:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "src",
+                      "scope": 1988,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 1951,
+                        "name": "ElementaryTypeName",
+                        "src": "257:4:5"
+                      }
+                    ],
+                    "id": 1952,
+                    "name": "VariableDeclaration",
+                    "src": "257:8:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "len",
+                      "scope": 1988,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1764,67 +1816,15 @@
                         },
                         "id": 1953,
                         "name": "ElementaryTypeName",
-                        "src": "246:4:5"
+                        "src": "267:4:5"
                       }
                     ],
                     "id": 1954,
                     "name": "VariableDeclaration",
-                    "src": "246:9:5"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "src",
-                      "scope": 1992,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 1955,
-                        "name": "ElementaryTypeName",
-                        "src": "257:4:5"
-                      }
-                    ],
-                    "id": 1956,
-                    "name": "VariableDeclaration",
-                    "src": "257:8:5"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "len",
-                      "scope": 1992,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 1957,
-                        "name": "ElementaryTypeName",
-                        "src": "267:4:5"
-                      }
-                    ],
-                    "id": 1958,
-                    "name": "VariableDeclaration",
                     "src": "267:8:5"
                   }
                 ],
-                "id": 1959,
+                "id": 1955,
                 "name": "ParameterList",
                 "src": "245:31:5"
               },
@@ -1835,7 +1835,7 @@
                   ]
                 },
                 "children": [],
-                "id": 1960,
+                "id": 1956,
                 "name": "ParameterList",
                 "src": "290:0:5"
               },
@@ -1867,11 +1867,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 1958,
+                              "referencedDeclaration": 1954,
                               "type": "uint256",
                               "value": "len"
                             },
-                            "id": 1961,
+                            "id": 1957,
                             "name": "Identifier",
                             "src": "357:3:5"
                           },
@@ -1888,12 +1888,12 @@
                               "type": "int_const 32",
                               "value": "32"
                             },
-                            "id": 1962,
+                            "id": 1958,
                             "name": "Literal",
                             "src": "364:2:5"
                           }
                         ],
-                        "id": 1963,
+                        "id": 1959,
                         "name": "BinaryOperation",
                         "src": "357:9:5"
                       },
@@ -1916,11 +1916,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1958,
+                                  "referencedDeclaration": 1954,
                                   "type": "uint256",
                                   "value": "len"
                                 },
-                                "id": 1964,
+                                "id": 1960,
                                 "name": "Identifier",
                                 "src": "368:3:5"
                               },
@@ -1937,17 +1937,17 @@
                                   "type": "int_const 32",
                                   "value": "32"
                                 },
-                                "id": 1965,
+                                "id": 1961,
                                 "name": "Literal",
                                 "src": "375:2:5"
                               }
                             ],
-                            "id": 1966,
+                            "id": 1962,
                             "name": "Assignment",
                             "src": "368:9:5"
                           }
                         ],
-                        "id": 1967,
+                        "id": 1963,
                         "name": "ExpressionStatement",
                         "src": "368:9:5"
                       },
@@ -1958,7 +1958,7 @@
                               "externalReferences": [
                                 {
                                   "src": {
-                                    "declaration": 1956,
+                                    "declaration": 1952,
                                     "isOffset": false,
                                     "isSlot": false,
                                     "src": "439:3:5",
@@ -1967,7 +1967,7 @@
                                 },
                                 {
                                   "dest": {
-                                    "declaration": 1954,
+                                    "declaration": 1950,
                                     "isOffset": false,
                                     "isSlot": false,
                                     "src": "427:4:5",
@@ -1978,7 +1978,7 @@
                               "operations": "{ mstore(dest, mload(src)) }"
                             },
                             "children": [],
-                            "id": 1968,
+                            "id": 1964,
                             "name": "InlineAssembly",
                             "src": "393:65:5"
                           },
@@ -2001,11 +2001,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1954,
+                                      "referencedDeclaration": 1950,
                                       "type": "uint256",
                                       "value": "dest"
                                     },
-                                    "id": 1969,
+                                    "id": 1965,
                                     "name": "Identifier",
                                     "src": "471:4:5"
                                   },
@@ -2022,17 +2022,17 @@
                                       "type": "int_const 32",
                                       "value": "32"
                                     },
-                                    "id": 1970,
+                                    "id": 1966,
                                     "name": "Literal",
                                     "src": "479:2:5"
                                   }
                                 ],
-                                "id": 1971,
+                                "id": 1967,
                                 "name": "Assignment",
                                 "src": "471:10:5"
                               }
                             ],
-                            "id": 1972,
+                            "id": 1968,
                             "name": "ExpressionStatement",
                             "src": "471:10:5"
                           },
@@ -2055,11 +2055,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1956,
+                                      "referencedDeclaration": 1952,
                                       "type": "uint256",
                                       "value": "src"
                                     },
-                                    "id": 1973,
+                                    "id": 1969,
                                     "name": "Identifier",
                                     "src": "495:3:5"
                                   },
@@ -2076,34 +2076,34 @@
                                       "type": "int_const 32",
                                       "value": "32"
                                     },
-                                    "id": 1974,
+                                    "id": 1970,
                                     "name": "Literal",
                                     "src": "502:2:5"
                                   }
                                 ],
-                                "id": 1975,
+                                "id": 1971,
                                 "name": "Assignment",
                                 "src": "495:9:5"
                               }
                             ],
-                            "id": 1976,
+                            "id": 1972,
                             "name": "ExpressionStatement",
                             "src": "495:9:5"
                           }
                         ],
-                        "id": 1977,
+                        "id": 1973,
                         "name": "Block",
                         "src": "379:136:5"
                       }
                     ],
-                    "id": 1978,
+                    "id": 1974,
                     "name": "ForStatement",
                     "src": "350:165:5"
                   },
                   {
                     "attributes": {
                       "assignments": [
-                        1980
+                        1976
                       ]
                     },
                     "children": [
@@ -2111,7 +2111,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "mask",
-                          "scope": 1991,
+                          "scope": 1987,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "uint256",
@@ -2124,12 +2124,12 @@
                               "name": "uint",
                               "type": "uint256"
                             },
-                            "id": 1979,
+                            "id": 1975,
                             "name": "ElementaryTypeName",
                             "src": "557:4:5"
                           }
                         ],
-                        "id": 1980,
+                        "id": 1976,
                         "name": "VariableDeclaration",
                         "src": "557:9:5"
                       },
@@ -2176,7 +2176,7 @@
                                   "type": "int_const 256",
                                   "value": "256"
                                 },
-                                "id": 1981,
+                                "id": 1977,
                                 "name": "Literal",
                                 "src": "569:3:5"
                               },
@@ -2219,7 +2219,7 @@
                                           "type": "int_const 32",
                                           "value": "32"
                                         },
-                                        "id": 1982,
+                                        "id": 1978,
                                         "name": "Literal",
                                         "src": "577:2:5"
                                       },
@@ -2229,26 +2229,26 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 1958,
+                                          "referencedDeclaration": 1954,
                                           "type": "uint256",
                                           "value": "len"
                                         },
-                                        "id": 1983,
+                                        "id": 1979,
                                         "name": "Identifier",
                                         "src": "582:3:5"
                                       }
                                     ],
-                                    "id": 1984,
+                                    "id": 1980,
                                     "name": "BinaryOperation",
                                     "src": "577:8:5"
                                   }
                                 ],
-                                "id": 1985,
+                                "id": 1981,
                                 "name": "TupleExpression",
                                 "src": "576:10:5"
                               }
                             ],
-                            "id": 1986,
+                            "id": 1982,
                             "name": "BinaryOperation",
                             "src": "569:17:5"
                           },
@@ -2265,17 +2265,17 @@
                               "type": "int_const 1",
                               "value": "1"
                             },
-                            "id": 1987,
+                            "id": 1983,
                             "name": "Literal",
                             "src": "589:1:5"
                           }
                         ],
-                        "id": 1988,
+                        "id": 1984,
                         "name": "BinaryOperation",
                         "src": "569:21:5"
                       }
                     ],
-                    "id": 1989,
+                    "id": 1985,
                     "name": "VariableDeclarationStatement",
                     "src": "557:33:5"
                   },
@@ -2284,7 +2284,7 @@
                       "externalReferences": [
                         {
                           "src": {
-                            "declaration": 1956,
+                            "declaration": 1952,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "648:3:5",
@@ -2293,7 +2293,7 @@
                         },
                         {
                           "mask": {
-                            "declaration": 1980,
+                            "declaration": 1976,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "658:4:5",
@@ -2302,7 +2302,7 @@
                         },
                         {
                           "dest": {
-                            "declaration": 1954,
+                            "declaration": 1950,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "703:4:5",
@@ -2311,7 +2311,7 @@
                         },
                         {
                           "mask": {
-                            "declaration": 1980,
+                            "declaration": 1976,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "710:4:5",
@@ -2320,7 +2320,7 @@
                         },
                         {
                           "dest": {
-                            "declaration": 1954,
+                            "declaration": 1950,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "735:4:5",
@@ -2331,17 +2331,17 @@
                       "operations": "{\n    let srcpart := and(mload(src), not(mask))\n    let destpart := and(mload(dest), mask)\n    mstore(dest, or(destpart, srcpart))\n}"
                     },
                     "children": [],
-                    "id": 1990,
+                    "id": 1986,
                     "name": "InlineAssembly",
                     "src": "600:173:5"
                   }
                 ],
-                "id": 1991,
+                "id": 1987,
                 "name": "Block",
                 "src": "290:489:5"
               }
             ],
-            "id": 1992,
+            "id": 1988,
             "name": "FunctionDefinition",
             "src": "230:549:5"
           },
@@ -2355,7 +2355,7 @@
                 null
               ],
               "name": "toSlice",
-              "scope": 2059,
+              "scope": 2055,
               "stateMutability": "pure",
               "superFunction": null,
               "visibility": "internal"
@@ -2367,7 +2367,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "self",
-                      "scope": 2012,
+                      "scope": 2008,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -2380,17 +2380,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 1993,
+                        "id": 1989,
                         "name": "ElementaryTypeName",
                         "src": "996:6:5"
                       }
                     ],
-                    "id": 1994,
+                    "id": 1990,
                     "name": "VariableDeclaration",
                     "src": "996:18:5"
                   }
                 ],
-                "id": 1995,
+                "id": 1991,
                 "name": "ParameterList",
                 "src": "995:20:5"
               },
@@ -2400,7 +2400,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 2012,
+                      "scope": 2008,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "struct strings.slice",
@@ -2412,20 +2412,20 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "slice",
-                          "referencedDeclaration": 1952,
+                          "referencedDeclaration": 1948,
                           "type": "struct strings.slice"
                         },
-                        "id": 1996,
+                        "id": 1992,
                         "name": "UserDefinedTypeName",
                         "src": "1039:5:5"
                       }
                     ],
-                    "id": 1997,
+                    "id": 1993,
                     "name": "VariableDeclaration",
                     "src": "1039:12:5"
                   }
                 ],
-                "id": 1998,
+                "id": 1994,
                 "name": "ParameterList",
                 "src": "1038:14:5"
               },
@@ -2434,7 +2434,7 @@
                   {
                     "attributes": {
                       "assignments": [
-                        2000
+                        1996
                       ],
                       "initialValue": null
                     },
@@ -2443,7 +2443,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "ptr",
-                          "scope": 2011,
+                          "scope": 2007,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "uint256",
@@ -2456,17 +2456,17 @@
                               "name": "uint",
                               "type": "uint256"
                             },
-                            "id": 1999,
+                            "id": 1995,
                             "name": "ElementaryTypeName",
                             "src": "1063:4:5"
                           }
                         ],
-                        "id": 2000,
+                        "id": 1996,
                         "name": "VariableDeclaration",
                         "src": "1063:8:5"
                       }
                     ],
-                    "id": 2001,
+                    "id": 1997,
                     "name": "VariableDeclarationStatement",
                     "src": "1063:8:5"
                   },
@@ -2475,7 +2475,7 @@
                       "externalReferences": [
                         {
                           "ptr": {
-                            "declaration": 2000,
+                            "declaration": 1996,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "1104:3:5",
@@ -2484,7 +2484,7 @@
                         },
                         {
                           "self": {
-                            "declaration": 1994,
+                            "declaration": 1990,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "1115:4:5",
@@ -2495,13 +2495,13 @@
                       "operations": "{ ptr := add(self, 0x20) }"
                     },
                     "children": [],
-                    "id": 2002,
+                    "id": 1998,
                     "name": "InlineAssembly",
                     "src": "1081:55:5"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 1998
+                      "functionReturnParameters": 1994
                     },
                     "children": [
                       {
@@ -2534,11 +2534,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 1952,
+                              "referencedDeclaration": 1948,
                               "type": "type(struct strings.slice storage pointer)",
                               "value": "slice"
                             },
-                            "id": 2003,
+                            "id": 1999,
                             "name": "Identifier",
                             "src": "1152:5:5"
                           },
@@ -2584,7 +2584,7 @@
                                       "type": "type(bytes storage pointer)",
                                       "value": "bytes"
                                     },
-                                    "id": 2004,
+                                    "id": 2000,
                                     "name": "ElementaryTypeNameExpression",
                                     "src": "1158:5:5"
                                   },
@@ -2594,21 +2594,21 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1994,
+                                      "referencedDeclaration": 1990,
                                       "type": "string memory",
                                       "value": "self"
                                     },
-                                    "id": 2005,
+                                    "id": 2001,
                                     "name": "Identifier",
                                     "src": "1164:4:5"
                                   }
                                 ],
-                                "id": 2006,
+                                "id": 2002,
                                 "name": "FunctionCall",
                                 "src": "1158:11:5"
                               }
                             ],
-                            "id": 2007,
+                            "id": 2003,
                             "name": "MemberAccess",
                             "src": "1158:18:5"
                           },
@@ -2618,31 +2618,31 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2000,
+                              "referencedDeclaration": 1996,
                               "type": "uint256",
                               "value": "ptr"
                             },
-                            "id": 2008,
+                            "id": 2004,
                             "name": "Identifier",
                             "src": "1178:3:5"
                           }
                         ],
-                        "id": 2009,
+                        "id": 2005,
                         "name": "FunctionCall",
                         "src": "1152:30:5"
                       }
                     ],
-                    "id": 2010,
+                    "id": 2006,
                     "name": "Return",
                     "src": "1145:37:5"
                   }
                 ],
-                "id": 2011,
+                "id": 2007,
                 "name": "Block",
                 "src": "1053:136:5"
               }
             ],
-            "id": 2012,
+            "id": 2008,
             "name": "FunctionDefinition",
             "src": "979:210:5"
           },
@@ -2656,7 +2656,7 @@
                 null
               ],
               "name": "concat",
-              "scope": 2059,
+              "scope": 2055,
               "stateMutability": "pure",
               "superFunction": null,
               "visibility": "internal"
@@ -2668,7 +2668,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "self",
-                      "scope": 2058,
+                      "scope": 2054,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "struct strings.slice",
@@ -2680,15 +2680,15 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "slice",
-                          "referencedDeclaration": 1952,
+                          "referencedDeclaration": 1948,
                           "type": "struct strings.slice"
                         },
-                        "id": 2013,
+                        "id": 2009,
                         "name": "UserDefinedTypeName",
                         "src": "1492:5:5"
                       }
                     ],
-                    "id": 2014,
+                    "id": 2010,
                     "name": "VariableDeclaration",
                     "src": "1492:17:5"
                   },
@@ -2696,7 +2696,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "other",
-                      "scope": 2058,
+                      "scope": 2054,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "struct strings.slice",
@@ -2708,20 +2708,20 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "slice",
-                          "referencedDeclaration": 1952,
+                          "referencedDeclaration": 1948,
                           "type": "struct strings.slice"
                         },
-                        "id": 2015,
+                        "id": 2011,
                         "name": "UserDefinedTypeName",
                         "src": "1511:5:5"
                       }
                     ],
-                    "id": 2016,
+                    "id": 2012,
                     "name": "VariableDeclaration",
                     "src": "1511:18:5"
                   }
                 ],
-                "id": 2017,
+                "id": 2013,
                 "name": "ParameterList",
                 "src": "1491:39:5"
               },
@@ -2731,7 +2731,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 2058,
+                      "scope": 2054,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -2744,17 +2744,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 2018,
+                        "id": 2014,
                         "name": "ElementaryTypeName",
                         "src": "1554:6:5"
                       }
                     ],
-                    "id": 2019,
+                    "id": 2015,
                     "name": "VariableDeclaration",
                     "src": "1554:13:5"
                   }
                 ],
-                "id": 2020,
+                "id": 2016,
                 "name": "ParameterList",
                 "src": "1553:15:5"
               },
@@ -2763,7 +2763,7 @@
                   {
                     "attributes": {
                       "assignments": [
-                        2022
+                        2018
                       ]
                     },
                     "children": [
@@ -2771,7 +2771,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "ret",
-                          "scope": 2057,
+                          "scope": 2053,
                           "stateVariable": false,
                           "storageLocation": "memory",
                           "type": "string",
@@ -2784,12 +2784,12 @@
                               "name": "string",
                               "type": "string"
                             },
-                            "id": 2021,
+                            "id": 2017,
                             "name": "ElementaryTypeName",
                             "src": "1579:6:5"
                           }
                         ],
-                        "id": 2022,
+                        "id": 2018,
                         "name": "VariableDeclaration",
                         "src": "1579:17:5"
                       },
@@ -2828,12 +2828,12 @@
                                   "name": "string",
                                   "type": "string"
                                 },
-                                "id": 2023,
+                                "id": 2019,
                                 "name": "ElementaryTypeName",
                                 "src": "1603:6:5"
                               }
                             ],
-                            "id": 2024,
+                            "id": 2020,
                             "name": "NewExpression",
                             "src": "1599:10:5"
                           },
@@ -2860,7 +2860,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "_len",
-                                  "referencedDeclaration": 1949,
+                                  "referencedDeclaration": 1945,
                                   "type": "uint256"
                                 },
                                 "children": [
@@ -2870,16 +2870,16 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 2014,
+                                      "referencedDeclaration": 2010,
                                       "type": "struct strings.slice memory",
                                       "value": "self"
                                     },
-                                    "id": 2025,
+                                    "id": 2021,
                                     "name": "Identifier",
                                     "src": "1610:4:5"
                                   }
                                 ],
-                                "id": 2026,
+                                "id": 2022,
                                 "name": "MemberAccess",
                                 "src": "1610:9:5"
                               },
@@ -2891,7 +2891,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "_len",
-                                  "referencedDeclaration": 1949,
+                                  "referencedDeclaration": 1945,
                                   "type": "uint256"
                                 },
                                 "children": [
@@ -2901,38 +2901,38 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 2016,
+                                      "referencedDeclaration": 2012,
                                       "type": "struct strings.slice memory",
                                       "value": "other"
                                     },
-                                    "id": 2027,
+                                    "id": 2023,
                                     "name": "Identifier",
                                     "src": "1622:5:5"
                                   }
                                 ],
-                                "id": 2028,
+                                "id": 2024,
                                 "name": "MemberAccess",
                                 "src": "1622:10:5"
                               }
                             ],
-                            "id": 2029,
+                            "id": 2025,
                             "name": "BinaryOperation",
                             "src": "1610:22:5"
                           }
                         ],
-                        "id": 2030,
+                        "id": 2026,
                         "name": "FunctionCall",
                         "src": "1599:34:5"
                       }
                     ],
-                    "id": 2031,
+                    "id": 2027,
                     "name": "VariableDeclarationStatement",
                     "src": "1579:54:5"
                   },
                   {
                     "attributes": {
                       "assignments": [
-                        2033
+                        2029
                       ],
                       "initialValue": null
                     },
@@ -2941,7 +2941,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "retptr",
-                          "scope": 2057,
+                          "scope": 2053,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "uint256",
@@ -2954,17 +2954,17 @@
                               "name": "uint",
                               "type": "uint256"
                             },
-                            "id": 2032,
+                            "id": 2028,
                             "name": "ElementaryTypeName",
                             "src": "1643:4:5"
                           }
                         ],
-                        "id": 2033,
+                        "id": 2029,
                         "name": "VariableDeclaration",
                         "src": "1643:11:5"
                       }
                     ],
-                    "id": 2034,
+                    "id": 2030,
                     "name": "VariableDeclarationStatement",
                     "src": "1643:11:5"
                   },
@@ -2973,7 +2973,7 @@
                       "externalReferences": [
                         {
                           "retptr": {
-                            "declaration": 2033,
+                            "declaration": 2029,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "1687:6:5",
@@ -2982,7 +2982,7 @@
                         },
                         {
                           "ret": {
-                            "declaration": 2022,
+                            "declaration": 2018,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "1701:3:5",
@@ -2993,7 +2993,7 @@
                       "operations": "{ retptr := add(ret, 32) }"
                     },
                     "children": [],
-                    "id": 2035,
+                    "id": 2031,
                     "name": "InlineAssembly",
                     "src": "1664:55:5"
                   },
@@ -3033,11 +3033,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 1992,
+                              "referencedDeclaration": 1988,
                               "type": "function (uint256,uint256,uint256) pure",
                               "value": "memcpy"
                             },
-                            "id": 2036,
+                            "id": 2032,
                             "name": "Identifier",
                             "src": "1728:6:5"
                           },
@@ -3047,11 +3047,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2033,
+                              "referencedDeclaration": 2029,
                               "type": "uint256",
                               "value": "retptr"
                             },
-                            "id": 2037,
+                            "id": 2033,
                             "name": "Identifier",
                             "src": "1735:6:5"
                           },
@@ -3063,7 +3063,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "_ptr",
-                              "referencedDeclaration": 1951,
+                              "referencedDeclaration": 1947,
                               "type": "uint256"
                             },
                             "children": [
@@ -3073,16 +3073,16 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 2014,
+                                  "referencedDeclaration": 2010,
                                   "type": "struct strings.slice memory",
                                   "value": "self"
                                 },
-                                "id": 2038,
+                                "id": 2034,
                                 "name": "Identifier",
                                 "src": "1743:4:5"
                               }
                             ],
-                            "id": 2039,
+                            "id": 2035,
                             "name": "MemberAccess",
                             "src": "1743:9:5"
                           },
@@ -3094,7 +3094,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "_len",
-                              "referencedDeclaration": 1949,
+                              "referencedDeclaration": 1945,
                               "type": "uint256"
                             },
                             "children": [
@@ -3104,26 +3104,26 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 2014,
+                                  "referencedDeclaration": 2010,
                                   "type": "struct strings.slice memory",
                                   "value": "self"
                                 },
-                                "id": 2040,
+                                "id": 2036,
                                 "name": "Identifier",
                                 "src": "1754:4:5"
                               }
                             ],
-                            "id": 2041,
+                            "id": 2037,
                             "name": "MemberAccess",
                             "src": "1754:9:5"
                           }
                         ],
-                        "id": 2042,
+                        "id": 2038,
                         "name": "FunctionCall",
                         "src": "1728:36:5"
                       }
                     ],
-                    "id": 2043,
+                    "id": 2039,
                     "name": "ExpressionStatement",
                     "src": "1728:36:5"
                   },
@@ -3163,11 +3163,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 1992,
+                              "referencedDeclaration": 1988,
                               "type": "function (uint256,uint256,uint256) pure",
                               "value": "memcpy"
                             },
-                            "id": 2044,
+                            "id": 2040,
                             "name": "Identifier",
                             "src": "1774:6:5"
                           },
@@ -3192,11 +3192,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 2033,
+                                  "referencedDeclaration": 2029,
                                   "type": "uint256",
                                   "value": "retptr"
                                 },
-                                "id": 2045,
+                                "id": 2041,
                                 "name": "Identifier",
                                 "src": "1781:6:5"
                               },
@@ -3208,7 +3208,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "_len",
-                                  "referencedDeclaration": 1949,
+                                  "referencedDeclaration": 1945,
                                   "type": "uint256"
                                 },
                                 "children": [
@@ -3218,21 +3218,21 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 2014,
+                                      "referencedDeclaration": 2010,
                                       "type": "struct strings.slice memory",
                                       "value": "self"
                                     },
-                                    "id": 2046,
+                                    "id": 2042,
                                     "name": "Identifier",
                                     "src": "1790:4:5"
                                   }
                                 ],
-                                "id": 2047,
+                                "id": 2043,
                                 "name": "MemberAccess",
                                 "src": "1790:9:5"
                               }
                             ],
-                            "id": 2048,
+                            "id": 2044,
                             "name": "BinaryOperation",
                             "src": "1781:18:5"
                           },
@@ -3244,7 +3244,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "_ptr",
-                              "referencedDeclaration": 1951,
+                              "referencedDeclaration": 1947,
                               "type": "uint256"
                             },
                             "children": [
@@ -3254,16 +3254,16 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 2016,
+                                  "referencedDeclaration": 2012,
                                   "type": "struct strings.slice memory",
                                   "value": "other"
                                 },
-                                "id": 2049,
+                                "id": 2045,
                                 "name": "Identifier",
                                 "src": "1801:5:5"
                               }
                             ],
-                            "id": 2050,
+                            "id": 2046,
                             "name": "MemberAccess",
                             "src": "1801:10:5"
                           },
@@ -3275,7 +3275,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "_len",
-                              "referencedDeclaration": 1949,
+                              "referencedDeclaration": 1945,
                               "type": "uint256"
                             },
                             "children": [
@@ -3285,32 +3285,32 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 2016,
+                                  "referencedDeclaration": 2012,
                                   "type": "struct strings.slice memory",
                                   "value": "other"
                                 },
-                                "id": 2051,
+                                "id": 2047,
                                 "name": "Identifier",
                                 "src": "1813:5:5"
                               }
                             ],
-                            "id": 2052,
+                            "id": 2048,
                             "name": "MemberAccess",
                             "src": "1813:10:5"
                           }
                         ],
-                        "id": 2053,
+                        "id": 2049,
                         "name": "FunctionCall",
                         "src": "1774:50:5"
                       }
                     ],
-                    "id": 2054,
+                    "id": 2050,
                     "name": "ExpressionStatement",
                     "src": "1774:50:5"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 2020
+                      "functionReturnParameters": 2016
                     },
                     "children": [
                       {
@@ -3319,36 +3319,36 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 2022,
+                          "referencedDeclaration": 2018,
                           "type": "string memory",
                           "value": "ret"
                         },
-                        "id": 2055,
+                        "id": 2051,
                         "name": "Identifier",
                         "src": "1841:3:5"
                       }
                     ],
-                    "id": 2056,
+                    "id": 2052,
                     "name": "Return",
                     "src": "1834:10:5"
                   }
                 ],
-                "id": 2057,
+                "id": 2053,
                 "name": "Block",
                 "src": "1569:282:5"
               }
             ],
-            "id": 2058,
+            "id": 2054,
             "name": "FunctionDefinition",
             "src": "1476:375:5"
           }
         ],
-        "id": 2059,
+        "id": 2055,
         "name": "ContractDefinition",
         "src": "144:1709:5"
       }
     ],
-    "id": 2060,
+    "id": 2056,
     "name": "SourceUnit",
     "src": "119:1735:5"
   },
@@ -3358,7 +3358,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-06-14T06:00:56.383Z",
+  "updatedAt": "2021-07-05T13:53:33.405Z",
   "devdoc": {
     "methods": {}
   },
