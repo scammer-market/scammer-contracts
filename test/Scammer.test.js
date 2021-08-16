@@ -1,34 +1,35 @@
 var Metadata = artifacts.require('./Metadata.sol')
-var Folia = artifacts.require('./Folia.sol')
+var Scammer = artifacts.require('./Scammer.sol')
 var BigNumber = require('bignumber.js')
 let gasPrice = 1000000000 // 1GWEI
 
 let _ = '        '
 
-contract('Folia', async function(accounts) {
+contract('Scammer', async function(accounts) {
   let token, metadata
 
   before(done => {
     ;(async () => {
       try {
-        var totalGas = new BigNumber(0)
+        token = await Scammer.deployed()
+        //var totalGas = new BigNumber(0)
 
-        // Deploy Metadata.sol
-        metadata = await Metadata.new()
-        var tx = await web3.eth.getTransactionReceipt(metadata.transactionHash)
-        totalGas = totalGas.plus(tx.gasUsed)
-        console.log(_ + tx.gasUsed + ' - Deploy Metadata')
-        metadata = await Metadata.deployed()
+        //// Deploy Metadata.sol
+        //metadata = await Metadata.new()
+        //var tx = await web3.eth.getTransactionReceipt(metadata.transactionHash)
+        //totalGas = totalGas.plus(tx.gasUsed)
+        //console.log(_ + tx.gasUsed + ' - Deploy Metadata')
+        //metadata = await Metadata.deployed()
 
-        // Deploy Folia.sol
-        token = await Folia.new("Folia", "TKN", metadata.address)
-        var tx = await web3.eth.getTransactionReceipt(token.transactionHash)
-        totalGas = totalGas.plus(tx.gasUsed)
-        console.log(_ + tx.gasUsed + ' - Deploy Folia')
-        token = await Folia.deployed()
+        //// Deploy Scammer.sol
+        //token = await Scammer.new("Scammer", "SCM", metadata.address)
+        //var tx = await web3.eth.getTransactionReceipt(token.transactionHash)
+        //totalGas = totalGas.plus(tx.gasUsed)
+        //console.log(_ + tx.gasUsed + ' - Deploy Scammer')
+        //token = await Scammer.deployed()
 
-        console.log(_ + '-----------------------')
-        console.log(_ + totalGas.toFormat(0) + ' - Total Gas')
+        //console.log(_ + '-----------------------')
+        //console.log(_ + totalGas.toFormat(0) + ' - Total Gas')
         done()
       } catch (error) {
         console.error(error)
@@ -36,10 +37,11 @@ contract('Folia', async function(accounts) {
       }
     })()
   })
-  describe('Folia.sol', function() {
+  describe('Scammer.sol', function() {
     it('should return metadata uints as strings', async function() {
+      
 
-      const URI = 'https://folia.app/v1/metadata/'
+      const URI = 'https://scammer.market/v1/metadata/'
 
       let tokenURI_uint = 0
       let tokenURI_result = await token.tokenURI(tokenURI_uint)
@@ -70,7 +72,7 @@ contract('Folia', async function(accounts) {
       )
     })
 
-    it('should mint a token from the owner account', async function() {
+    it('should mint a token from the owner account, and verify with token.exists() function', async function() {
       // begin with zero balance
       let zeroBalance = await token.totalSupply()
       assert(
@@ -97,12 +99,26 @@ contract('Folia', async function(accounts) {
         ownerBalance.toString(10) === '1',
         "Owner account should have 1 token instead it has " + ownerBalance.toString(10)
       )
+
+      // check that tokenId 1 exists
+      let tokenOneExists = await token.exists(1)
+      assert(
+        tokenOneExists,
+        "scammer.exists(1) should return `true`, but instead returns " + tokenOneExists
+      )
+
+      // check that tokenId 5 does not exist
+      let tokenFiveExists = await token.exists(5)
+      assert(
+        !tokenFiveExists,
+        "scammer.exists(5) should return `false`, but instead returns " + tokenFiveExists
+      )
       
       // make sure the token at index 0 has id 1
       let tokenId = await token.tokenOfOwnerByIndex(accounts[0], "0")
       assert(
         tokenId.toString(10) === '1',
-        "Folia at index 0 is " + tokenId.toString(10)
+        "Scammer at index 0 is " + tokenId.toString(10)
       )
     })
   })
