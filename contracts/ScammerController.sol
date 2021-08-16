@@ -11,7 +11,7 @@ import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 contract ScammerController is Ownable {
 
     event newCollection(uint256 collectionId, uint256 editions, uint256 price, bool paused);
-    event updatedCollection(uint256 collectionId, uint256 editions, uint256 price, bool paused);
+    event updatedCollection(uint256 collectionId, uint256 editions, uint256 price, CollectionMode mode);
     event editionBought(uint256 collectionId, uint256 editionId, uint256 tokenId, address recipient, uint256 paid, uint256 artistReceived, uint256 adminReceived);
 
     using SafeMath for uint256;
@@ -21,15 +21,18 @@ contract ScammerController is Ownable {
 
     mapping (address => uint) public vouchers;
 
+    enum CollectionMode { PAUSED, VOUCHER_ONLY_MODE, UNPAUSED }
+
     mapping (uint256 => Collection) public collections;
     struct Collection {
         bool exists;
-        bool paused;
+        CollectionMode mode;
+        bool voucherOnlyMode;
         uint256 editions;
         uint256 price;
     }
 
-    uint256 public adminSplit = 15;
+    uint256 public adminSplit = 20;
 
     address payable public adminWallet;
     address payable public artistWallet;
@@ -65,7 +68,11 @@ contract ScammerController is Ownable {
         collections[latestCollectionId].exists = true;
         collections[latestCollectionId].editions = editions;
         collections[latestCollectionId].price = price;
-        collections[latestCollectionId].paused = _paused;
+        if (_paused) {
+            collections[latestCollectionId].mode = CollectionMode.PAUSED;
+        } else {
+            collections[latestCollectionId].mode = CollectionMode.UNPAUSED;
+        }
         emit newCollection(latestCollectionId, editions, price, _paused);
     }
 
@@ -81,31 +88,41 @@ contract ScammerController is Ownable {
         return tokenIds;
     }
 
+    function setVoucherOnlyMode(uint256 collectionId) public onlyOwner {
+        require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
+        collections[collectionId].mode = CollectionMode.VOUCHER_ONLY_MODE;
+        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].mode);
+    }
+
     function updateCollectionPaused(uint256 collectionId, bool _paused) public onlyOwner {
         require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
-        collections[collectionId].paused = _paused;
-        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].paused);
+        if (_paused) {
+            collections[latestCollectionId].mode = CollectionMode.PAUSED;
+        } else {
+            collections[latestCollectionId].mode = CollectionMode.UNPAUSED;
+        }
+        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].mode);
     }
 
     function updateCollectionEditions(uint256 collectionId, uint256 _editions) public onlyOwner {
         require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
         require(collections[collectionId].editions < _editions, "EDITIONS_MUST_INCREASE");
         collections[collectionId].editions = _editions;
-        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].paused);
+        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].mode);
     }
 
     function updateCollectionPrice(uint256 collectionId, uint256 _price) public onlyOwner {
         require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
         collections[collectionId].price = _price;
-        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].paused);
+        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].mode);
     }
 
     function redeem(address recipient, uint256 tokenId) public notPaused returns (bool) {
         uint256 collectionId = tokenId.div(MAX_EDITIONS);
         uint256 editionId = tokenId.mod(MAX_EDITIONS);
 
-        // need to change this so it checks that token exists (collectionId exists, and edition # exists)
-        require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
+        require(collections[collectionId].mode == CollectionMode.UNPAUSED || collections[collectionId].mode == CollectionMode.VOUCHER_ONLY_MODE, "REDEEM_NOT_ENABLED");
+        require(collections[collectionId].exists, "INVALID_TOKEN_ID");
         require(editionId < collections[collectionId].editions, "INVALID_TOKEN_ID");
         require(vouchers[msg.sender] > 0 , "USER_HAS_NO_VOUCHERS");
 
@@ -121,8 +138,8 @@ contract ScammerController is Ownable {
         uint256 collectionId = tokenId.div(MAX_EDITIONS);
         uint256 editionId = tokenId.mod(MAX_EDITIONS);
 
-        // need to change this so it checks that token exists (collectionId exists, and edition # exists)
-        require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
+        require(collections[collectionId].mode == CollectionMode.UNPAUSED, "BUY_NOT_ENABLED");
+        require(collections[collectionId].exists, "INVALID_TOKEN_ID");
         require(editionId < collections[collectionId].editions, "INVALID_TOKEN_ID");
         require(msg.value == collections[collectionId].price , "DID_NOT_SEND_PRICE");
 
@@ -142,12 +159,16 @@ contract ScammerController is Ownable {
         vouchers[recipient] = numVouchers;
     }
 
-    function burnVoucher(address recipient) public onlyOwner {
+    function updateNumVouchers(address recipient, uint numVouchers) public onlyOwner {
+        vouchers[recipient] = numVouchers;
+    }
+
+    function burnAllVouchers(address recipient) public onlyOwner {
         vouchers[recipient] = 0;
     }
 
-    function hasvoucher(address recipient) external view returns (bool) {
-        return vouchers[recipient] > 0;
+    function numVouchers(address recipient) external view returns (uint) {
+        return vouchers[recipient];
     }
 
     function updateAdminSplit(uint256 _adminSplit) public onlyOwner {
@@ -166,5 +187,4 @@ contract ScammerController is Ownable {
     function updatePaused(bool _paused) public onlyOwner {
         paused = _paused;
     }
-
 }

@@ -43,6 +43,10 @@ contract Scammer is ERC721Full, Ownable {
         _admins.add(msg.sender);
         admins += 1;
     }
+
+    function exists(uint256 tokenId) external view returns (bool) {
+        return _exists(tokenId);
+    }
     
     function mint(address recepient, uint256 tokenId) public onlyAdminOrController {
         _mint(recepient, tokenId);
