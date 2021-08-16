@@ -1,6 +1,6 @@
 {
-  "name": "folia-contracts",
-  "version": "1.0.0",
+  "name": "scammer-contracts",
+  "version": "1.1.0",
   "description": "Scammer Market Smart Contracts",
   "scripts": {
     "compile": "npx truffle compile",
