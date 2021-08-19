@@ -13,7 +13,7 @@ module.exports = (deployer, helper, accounts) => {
       console.log(_ + "Metadata deployed at: " + metadata.address);
 
       // Deploy Scammer.sol
-      await deployer.deploy(Scammer, "Scammer", "FLA", metadata.address);
+      await deployer.deploy(Scammer, "SCAMMER", "SCAM", metadata.address);
       let scammer = await Scammer.deployed();
       console.log(_ + "Scammer deployed at: " + scammer.address);
 
