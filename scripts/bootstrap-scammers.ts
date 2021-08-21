@@ -27,12 +27,13 @@ module.exports = async function (callback) {
 		}
 
 		for (const tokenId of tokenIds) {
+			console.log("Redeemed Token #" + tokenId)
+
 			// // redeem vault vouchers (MAINNET ADDRESS)
-			// controller.redeem("0xCD4A05Ea925af76fe31Ce955bFEFDe3B634FF1dD", tokenId)
+			controller.redeem("0xCD4A05Ea925af76fe31Ce955bFEFDe3B634FF1dD", tokenId)
 
 			// redeem vault vouchers (RINKEBY ADDRESS)
-			console.log("Redeemed Token #" + tokenId)
-			await controller.redeem("0xA7E34d0d79f61AD5F18Ae105409fBF04194b76aC", tokenId)
+			// await controller.redeem("0xA7E34d0d79f61AD5F18Ae105409fBF04194b76aC", tokenId)
 		}
 	} catch (error) {
 		return callback(error)
