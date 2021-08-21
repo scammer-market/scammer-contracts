@@ -1,7 +1,7 @@
 {
   "name": "scammer-contracts",
-  "version": "1.1.0",
-  "description": "Scammer Market Smart Contracts",
+  "version": "1.2.0",
+  "description": "SCAMMER.MARKET Smart Contracts",
   "scripts": {
     "compile": "npx truffle compile",
     "migrate": "npx truffle migrate",

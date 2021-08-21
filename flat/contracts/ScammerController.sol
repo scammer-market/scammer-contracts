@@ -1064,11 +1064,24 @@ pragma solidity ^0.5.0;
 contract Metadata {
     using strings for *;
 
-    function tokenURI(uint _tokenId) public pure returns (string memory _infoUrl) {
-        string memory base = "https://scammer.market/v1/metadata/";
+    string private baseUrl;
+
+    constructor(string memory _baseUrl) public {
+        baseUrl = _baseUrl;
+    }
+
+    function tokenURI(uint _tokenId) public view returns (string memory _infoUrl) {
+        string memory basePath = "/v1/metadata/";
+        string memory base = baseUrl.toSlice().concat(basePath.toSlice());
         string memory id = uint2str(_tokenId);
         return base.toSlice().concat(id.toSlice());
     }
+
+    function contractURI() public view returns (string memory) {
+        string memory path = "/v1/metadata";
+        return baseUrl.toSlice().concat(path.toSlice());
+    }
+
     function uint2str(uint i) internal pure returns (string memory) {
         if (i == 0) return "0";
         uint j = i;
@@ -1138,6 +1151,10 @@ contract Scammer is ERC721Full, Ownable {
         _admins.add(msg.sender);
         admins += 1;
     }
+
+    function exists(uint256 tokenId) external view returns (bool) {
+        return _exists(tokenId);
+    }
     
     function mint(address recepient, uint256 tokenId) public onlyAdminOrController {
         _mint(recepient, tokenId);
@@ -1164,6 +1181,10 @@ contract Scammer is ERC721Full, Ownable {
 
     function tokenURI(uint _tokenId) external view returns (string memory _infoUrl) {
         return Metadata(metadata).tokenURI(_tokenId);
+    }
+
+    function contractURI() external view returns (string memory _infoUrl) {
+        return Metadata(metadata).contractURI();
     }
 
     /**
@@ -1201,28 +1222,32 @@ pragma solidity ^0.5.0;
 
 contract ScammerController is Ownable {
 
-    event newWork(uint256 workId, address payable artist, uint256 editions, uint256 price, bool paused);
-    event updatedWork(uint256 workId, address payable artist, uint256 editions, uint256 price, bool paused);
-    event editionBought(uint256 workId, uint256 editionId, uint256 tokenId, address recipient, uint256 paid, uint256 artistReceived, uint256 adminReceived);
+    event newCollection(uint256 collectionId, uint256 editions, uint256 price, bool paused);
+    event updatedCollection(uint256 collectionId, uint256 editions, uint256 price, CollectionMode mode);
+    event editionBought(uint256 collectionId, uint256 editionId, uint256 tokenId, address recipient, uint256 paid, uint256 artistReceived, uint256 adminReceived);
 
     using SafeMath for uint256;
 
     uint256 constant MAX_EDITIONS = 1000000;
-    uint256 public latestWorkId;
+    uint256 public latestCollectionId;
 
-    mapping (uint256 => Work) public works;
-    struct Work {
+    mapping (address => uint) public vouchers;
+
+    enum CollectionMode { PAUSED, VOUCHER_ONLY_MODE, UNPAUSED }
+
+    mapping (uint256 => Collection) public collections;
+    struct Collection {
         bool exists;
-        bool paused;
+        CollectionMode mode;
+        bool voucherOnlyMode;
         uint256 editions;
-        uint256 printed;
         uint256 price;
-        address payable artist;
     }
 
-    uint256 public adminSplit = 15;
+    uint256 public adminSplit = 20;
 
     address payable public adminWallet;
+    address payable public artistWallet;
     bool public paused;
     Scammer public scammer;
 
@@ -1233,60 +1258,102 @@ contract ScammerController is Ownable {
 
     constructor(
         Scammer _scammer,
-        address payable _adminWallet
+        address payable _adminWallet,
+        address payable _artistWallet,
+        address[] memory voucherRecipients
     ) public {
         scammer = _scammer;
         adminWallet = _adminWallet;
+        artistWallet = _artistWallet;
+
+        for (uint i = 0; i < voucherRecipients.length; i++) {
+            uint numVouchers = vouchers[voucherRecipients[i]].add(1);
+            vouchers[voucherRecipients[i]] = numVouchers;
+        }
     }
 
-    function addArtwork(address payable artist, uint256 editions, uint256 price, bool _paused) public onlyOwner {
+    function addCollection(uint256 editions, uint256 price, bool _paused) public onlyOwner {
         require(editions < MAX_EDITIONS, "MAX_EDITIONS_EXCEEDED");
 
-        latestWorkId += 1;
+        latestCollectionId += 1;
 
-        works[latestWorkId].exists = true;
-        works[latestWorkId].editions = editions;
-        works[latestWorkId].price = price;
-        works[latestWorkId].artist = artist;
-        works[latestWorkId].paused = _paused;
-        emit newWork(latestWorkId, artist, editions, price, _paused);
+        collections[latestCollectionId].exists = true;
+        collections[latestCollectionId].editions = editions;
+        collections[latestCollectionId].price = price;
+        if (_paused) {
+            collections[latestCollectionId].mode = CollectionMode.PAUSED;
+        } else {
+            collections[latestCollectionId].mode = CollectionMode.UNPAUSED;
+        }
+        emit newCollection(latestCollectionId, editions, price, _paused);
     }
 
-    function updateArtworkPaused(uint256 workId, bool _paused) public onlyOwner {
-        require(works[workId].exists, "WORK_DOES_NOT_EXIST");
-        works[workId].paused = _paused;
-        emit updatedWork(workId, works[workId].artist, works[workId].editions, works[workId].price, works[workId].paused);
+    function getAllTokenIds() external view returns (uint256[] memory) {
+        uint totalSupply = scammer.totalSupply();
+
+        uint256[] memory tokenIds = new uint256[](totalSupply);
+
+        for (uint i = 0; i < totalSupply; i++) {
+            tokenIds[i] = scammer.tokenByIndex(i);
+        }
+
+        return tokenIds;
     }
 
-    function updateArtworkEditions(uint256 workId, uint256 _editions) public onlyOwner {
-        require(works[workId].exists, "WORK_DOES_NOT_EXIST");
-        require(works[workId].printed < _editions, "WORK_EXCEEDS_EDITIONS");
-        works[workId].editions = _editions;
-        emit updatedWork(workId, works[workId].artist, works[workId].editions, works[workId].price, works[workId].paused);
+    function setVoucherOnlyMode(uint256 collectionId) public onlyOwner {
+        require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
+        collections[collectionId].mode = CollectionMode.VOUCHER_ONLY_MODE;
+        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].mode);
     }
 
-    function updateArtworkPrice(uint256 workId, uint256 _price) public onlyOwner {
-        require(works[workId].exists, "WORK_DOES_NOT_EXIST");
-        works[workId].price = _price;
-        emit updatedWork(workId, works[workId].artist, works[workId].editions, works[workId].price, works[workId].paused);
+    function updateCollectionPaused(uint256 collectionId, bool _paused) public onlyOwner {
+        require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
+        if (_paused) {
+            collections[collectionId].mode = CollectionMode.PAUSED;
+        } else {
+            collections[collectionId].mode = CollectionMode.UNPAUSED;
+        }
+        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].mode);
     }
 
-    function updateArtworkArtist(uint256 workId, address payable _artist) public onlyOwner {
-        require(works[workId].exists, "WORK_DOES_NOT_EXIST");
-        works[workId].artist = _artist;
-        emit updatedWork(workId, works[workId].artist, works[workId].editions, works[workId].price, works[workId].paused);
+    function updateCollectionEditions(uint256 collectionId, uint256 _editions) public onlyOwner {
+        require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
+        require(collections[collectionId].editions < _editions, "EDITIONS_MUST_INCREASE");
+        collections[collectionId].editions = _editions;
+        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].mode);
     }
 
-    function buy(address recipient, uint256 workId) public payable notPaused returns (bool) {
-        require(!works[workId].paused, "WORK_NOT_YET_FOR_SALE");
-        require(works[workId].exists, "WORK_DOES_NOT_EXIST");
-        require(works[workId].editions > works[workId].printed, "EDITIONS_EXCEEDED");
-        require(msg.value == works[workId].price, "DID_NOT_SEND_PRICE");
+    function updateCollectionPrice(uint256 collectionId, uint256 _price) public onlyOwner {
+        require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
+        collections[collectionId].price = _price;
+        emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].mode);
+    }
 
-        uint256 editionId = works[workId].printed.add(1);
-        works[workId].printed = editionId;
+    function redeem(address recipient, uint256 tokenId) public notPaused returns (bool) {
+        uint256 collectionId = tokenId.div(MAX_EDITIONS);
+        uint256 editionId = tokenId.mod(MAX_EDITIONS);
+
+        require(collections[collectionId].mode == CollectionMode.UNPAUSED || collections[collectionId].mode == CollectionMode.VOUCHER_ONLY_MODE, "REDEEM_NOT_ENABLED");
+        require(collections[collectionId].exists, "INVALID_TOKEN_ID");
+        require(editionId < collections[collectionId].editions, "INVALID_TOKEN_ID");
+        require(vouchers[msg.sender] > 0 , "USER_HAS_NO_VOUCHERS");
+
+        scammer.mint(recipient, tokenId);
+
+        uint numVouchers = vouchers[msg.sender].sub(1);
+        vouchers[msg.sender] = numVouchers;
         
-        uint256 tokenId = workId.mul(MAX_EDITIONS).add(editionId);
+        emit editionBought(collectionId, editionId, tokenId, recipient,  0, 0, 0);
+    }
+
+    function buy(address recipient, uint256 tokenId) public payable notPaused returns (bool) {
+        uint256 collectionId = tokenId.div(MAX_EDITIONS);
+        uint256 editionId = tokenId.mod(MAX_EDITIONS);
+
+        require(collections[collectionId].mode == CollectionMode.UNPAUSED, "BUY_NOT_ENABLED");
+        require(collections[collectionId].exists, "INVALID_TOKEN_ID");
+        require(editionId < collections[collectionId].editions, "INVALID_TOKEN_ID");
+        require(msg.value == collections[collectionId].price , "DID_NOT_SEND_PRICE");
 
         scammer.mint(recipient, tokenId);
         
@@ -1294,9 +1361,26 @@ contract ScammerController is Ownable {
         uint256 artistReceives = msg.value.sub(adminReceives);
 
         adminWallet.transfer(adminReceives);
-        works[workId].artist.transfer(artistReceives);
+        artistWallet.transfer(artistReceives);
 
-        emit editionBought(workId, editionId, tokenId, recipient,  works[workId].price, artistReceives, adminReceives);
+        emit editionBought(collectionId, editionId, tokenId, recipient,  collections[collectionId].price, artistReceives, adminReceives);
+    }
+
+    function mintVoucher(address recipient) public onlyOwner {
+        uint numVouchers = vouchers[recipient].add(1);
+        vouchers[recipient] = numVouchers;
+    }
+
+    function updateNumVouchers(address recipient, uint numVouchers) public onlyOwner {
+        vouchers[recipient] = numVouchers;
+    }
+
+    function burnAllVouchers(address recipient) public onlyOwner {
+        vouchers[recipient] = 0;
+    }
+
+    function numVouchers(address recipient) external view returns (uint) {
+        return vouchers[recipient];
     }
 
     function updateAdminSplit(uint256 _adminSplit) public onlyOwner {
@@ -1308,8 +1392,11 @@ contract ScammerController is Ownable {
         adminWallet = _adminWallet;
     }
 
+    function updateArtistWallet(address payable _artistWallet) public onlyOwner {
+        artistWallet = _artistWallet;
+    }
+
     function updatePaused(bool _paused) public onlyOwner {
         paused = _paused;
     }
-
 }

@@ -97,9 +97,9 @@ contract ScammerController is Ownable {
     function updateCollectionPaused(uint256 collectionId, bool _paused) public onlyOwner {
         require(collections[collectionId].exists, "COLLECTION_DOES_NOT_EXIST");
         if (_paused) {
-            collections[latestCollectionId].mode = CollectionMode.PAUSED;
+            collections[collectionId].mode = CollectionMode.PAUSED;
         } else {
-            collections[latestCollectionId].mode = CollectionMode.UNPAUSED;
+            collections[collectionId].mode = CollectionMode.UNPAUSED;
         }
         emit updatedCollection(collectionId, collections[collectionId].editions, collections[collectionId].price, collections[collectionId].mode);
     }
@@ -128,8 +128,8 @@ contract ScammerController is Ownable {
 
         scammer.mint(recipient, tokenId);
 
-        uint numVouchers = vouchers[recipient].sub(1);
-        vouchers[recipient] = numVouchers;
+        uint numVouchers = vouchers[msg.sender].sub(1);
+        vouchers[msg.sender] = numVouchers;
         
         emit editionBought(collectionId, editionId, tokenId, recipient,  0, 0, 0);
     }

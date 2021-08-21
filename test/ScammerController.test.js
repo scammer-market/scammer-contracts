@@ -51,6 +51,15 @@ contract('ScammerController', async function(accounts) {
         assert(false, error)
       }
 
+      // mints 100 collection (tokenIds 2000001 to 2000100) as paused
+      try {
+        await controller.addCollection(100, web3.utils.toWei("0.1", "ether"), true)
+      } catch (error) {
+        console.log(error)
+        assert(false, error)
+      }
+
+
       // unpauses collection
       try {
         await controller.updateCollectionPaused(1, false)
@@ -73,6 +82,14 @@ contract('ScammerController', async function(accounts) {
       // buy with incorrect priice should fail
       await assertError("DID_NOT_SEND_PRICE", controller.buy(accounts[0], 1000002, {from: accounts[0], value: web3.utils.toWei("0.05", "ether")}))
 
+    })
+
+    it('should allow voucher holders to redeem for other accounts', async function() {
+      await assertNoError("can mint new voucher",
+        controller.mintVoucher(accounts[0]))
+
+      // can redeem from an account with vouchers
+      await assertNoError("can redeem voucher", controller.redeem(accounts[9], 1000399, {from: accounts[0]}))
     })
 
     it('should pause collection again, enable voucher mode, and allow voucher purchases', async function() {
@@ -134,6 +151,7 @@ contract('ScammerController', async function(accounts) {
       await assertNoError("can unpause collection",
         controller.updateCollectionPaused(1, false))
     })
+
 
     it('should mint several vouchers, and track accordingly', async function() {
 

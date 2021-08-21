@@ -6,11 +6,26 @@ import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 import "openzeppelin-solidity/contracts/access/Roles.sol";
 import "./Metadata.sol";
 
-
-
 /**
- * The Token contract does this and that...
- */
+// ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
+//    
+//    OOOOOO    OOOOOOO   OOOOOO   OOOOOOOOOO   OOOOOOOOOO   OOOOOOOO  OOOOOOO 
+//   OOOOOOO   OOOOOOOO  OOOOOOOO  OOOOOOOOOOO  OOOOOOOOOOO  OOOOOOOO  OOOOOOOO
+//   !OO       !OO       OO!  OOO  OO! OO! OO!  OO! OO! OO!  OO!       OO!  OOO
+//   !O!       !O!       !O!  O!O  !O! !O! !O!  !O! !O! !O!  !O!       !O!  O!O
+//   !!OO!!    !O!       O!O!O!O!  O!! !!O O!O  O!! !!O O!O  O!!!:!    O!O!!O! 
+//    !!O!!!   !!!       !!!O!!!!  !O!   ! !O!  !O!   ! !O!  !!!!!:    !!O!O!  
+//        !:!  :!!       !!:  !!!  !!:     !!:  !!:     !!:  !!:       !!: :!! 
+//       !:!   :!:       :!:  !:!  :!:     :!:  :!:     :!:  :!:       :!:  !:!
+//   :::: ::    ::: :::  ::   :::  :::     ::   :::     ::    :: ::::  ::   :::
+//   :: : :     :: :: :   :   : :   :      :     :      :    : :: ::    :   : :
+//
+// .. SCAMMER.MARKET .. 2021
+// .. AMNESIA SCANNER .. PWR .. WURMHUMMUSFABRIK
+//
+// : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : :
+**/
+
 contract Scammer is ERC721Full, Ownable {
     using Roles for Roles.Role;
     Roles.Role private _admins;
@@ -73,6 +88,10 @@ contract Scammer is ERC721Full, Ownable {
 
     function tokenURI(uint _tokenId) external view returns (string memory _infoUrl) {
         return Metadata(metadata).tokenURI(_tokenId);
+    }
+
+    function contractURI() external view returns (string memory _infoUrl) {
+        return Metadata(metadata).contractURI();
     }
 
     /**

@@ -1064,11 +1064,24 @@ pragma solidity ^0.5.0;
 contract Metadata {
     using strings for *;
 
-    function tokenURI(uint _tokenId) public pure returns (string memory _infoUrl) {
-        string memory base = "https://scammer.market/v1/metadata/";
+    string private baseUrl;
+
+    constructor(string memory _baseUrl) public {
+        baseUrl = _baseUrl;
+    }
+
+    function tokenURI(uint _tokenId) public view returns (string memory _infoUrl) {
+        string memory basePath = "/v1/metadata/";
+        string memory base = baseUrl.toSlice().concat(basePath.toSlice());
         string memory id = uint2str(_tokenId);
         return base.toSlice().concat(id.toSlice());
     }
+
+    function contractURI() public view returns (string memory) {
+        string memory path = "/v1/metadata";
+        return baseUrl.toSlice().concat(path.toSlice());
+    }
+
     function uint2str(uint i) internal pure returns (string memory) {
         if (i == 0) return "0";
         uint j = i;
@@ -1138,6 +1151,10 @@ contract Scammer is ERC721Full, Ownable {
         _admins.add(msg.sender);
         admins += 1;
     }
+
+    function exists(uint256 tokenId) external view returns (bool) {
+        return _exists(tokenId);
+    }
     
     function mint(address recepient, uint256 tokenId) public onlyAdminOrController {
         _mint(recepient, tokenId);
@@ -1164,6 +1181,10 @@ contract Scammer is ERC721Full, Ownable {
 
     function tokenURI(uint _tokenId) external view returns (string memory _infoUrl) {
         return Metadata(metadata).tokenURI(_tokenId);
+    }
+
+    function contractURI() external view returns (string memory _infoUrl) {
+        return Metadata(metadata).contractURI();
     }
 
     /**

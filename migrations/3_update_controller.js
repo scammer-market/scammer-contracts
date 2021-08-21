@@ -5,28 +5,28 @@ let _ = '        '
 
 module.exports = (deployer, helper, accounts) => {
 
-  deployer.then(async () => {
-    try {
-     // Deploy Scammer.sol
-      let scammer = await Scammer.deployed()
-      console.log(_ + 'Scammer deployed at: ' + scammer.address)
+  //deployer.then(async () => {
+  //  try {
+  //   // Deploy Scammer.sol
+  //    let scammer = await Scammer.deployed()
+  //    console.log(_ + 'Scammer deployed at: ' + scammer.address)
 
-      // Deploy ScammerController.sol
-      await deployer.deploy(
-        ScammerController,
-        scammer.address,
-        accounts[1],
-        accounts[2],
-        accounts.slice(3, 5)
-      );
-      let scammerController = await ScammerController.deployed()
-      console.log(_ + 'ScammerController deployed at: ' + scammerController.address)
+  //    // Deploy ScammerController.sol
+  //    await deployer.deploy(
+  //      ScammerController,
+  //      scammer.address,
+  //      accounts[1],
+  //      accounts[2],
+  //      accounts.slice(3, 5)
+  //    );
+  //    let scammerController = await ScammerController.deployed()
+  //    console.log(_ + 'ScammerController deployed at: ' + scammerController.address)
 
-      await scammer.updateController(scammerController.address)
-      console.log(_ + 'ScammerController updated to ' + scammerController.address)
+  //    await scammer.updateController(scammerController.address)
+  //    console.log(_ + 'ScammerController updated to ' + scammerController.address)
 
-    } catch (error) {
-      console.log(error)
-    }
-  })
+  //  } catch (error) {
+  //    console.log(error)
+  //  }
+  //})
 }

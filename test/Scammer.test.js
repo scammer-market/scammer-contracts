@@ -41,34 +41,42 @@ contract('Scammer', async function(accounts) {
     it('should return metadata uints as strings', async function() {
       
 
-      const URI = 'https://scammer.market/v1/metadata/'
+      const BASE_URI = process.env.APP_URL
+      const TOKEN_URI = BASE_URI + '/v1/metadata/'
+      const CONTRACT_URI = BASE_URI + '/v1/metadata'
+
+      let contractURI_result = await token.contractURI()
+      assert(
+        CONTRACT_URI === contractURI_result,
+        'incorrect value "' + contractURI_result + '" returned instead of ' +  CONTRACT_URI
+      )
 
       let tokenURI_uint = 0
       let tokenURI_result = await token.tokenURI(tokenURI_uint)
       assert(
-        URI + tokenURI_uint.toString() === tokenURI_result,
-        'incorrect value "' + tokenURI_result + '" returned instead of ' +  URI + tokenURI_uint.toString()
+        TOKEN_URI + tokenURI_uint.toString() === tokenURI_result,
+        'incorrect value "' + tokenURI_result + '" returned instead of ' +  TOKEN_URI + tokenURI_uint.toString()
       )
 
       tokenURI_uint = 2345
       tokenURI_result = await token.tokenURI(tokenURI_uint)
       assert(
-        URI + tokenURI_uint.toString() === tokenURI_result,
-        'incorrect value "' + tokenURI_result + '" returned instead of ' +  URI + tokenURI_uint.toString()
+        TOKEN_URI + tokenURI_uint.toString() === tokenURI_result,
+        'incorrect value "' + tokenURI_result + '" returned instead of ' +  TOKEN_URI + tokenURI_uint.toString()
       )
 
       tokenURI_uint = 23452345
       tokenURI_result = await token.tokenURI(tokenURI_uint)
       assert(
-        URI + tokenURI_uint.toString() === tokenURI_result,
-        'incorrect value "' + tokenURI_result + '" returned instead of ' +  URI + tokenURI_uint.toString()
+        TOKEN_URI + tokenURI_uint.toString() === tokenURI_result,
+        'incorrect value "' + tokenURI_result + '" returned instead of ' +  TOKEN_URI + tokenURI_uint.toString()
       )
 
       tokenURI_uint = 134452
       tokenURI_result = await token.tokenURI(tokenURI_uint)
       assert(
-        URI + tokenURI_uint.toString() === tokenURI_result,
-        'incorrect value "' + tokenURI_result + '" returned instead of ' +  URI + tokenURI_uint.toString()
+        TOKEN_URI + tokenURI_uint.toString() === tokenURI_result,
+        'incorrect value "' + tokenURI_result + '" returned instead of ' +  TOKEN_URI + tokenURI_uint.toString()
       )
     })
 

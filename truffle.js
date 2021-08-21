@@ -37,12 +37,12 @@ module.exports = {
           process.env.MAINNET_MNEMONIC,
           'https://mainnet.infura.io/v3/' + process.env.INFURA_API_KEY,
           // using wallet at index 0 ----------------------------------------------------------------------------------------v
-          0,
+          2,
           10
         )
       },
       network_id: 1,
-      gasPrice: 150000000000, // 150 GWEI
+      gasPrice: 25000000000, // 25 GWEI
       gas: 6721975
     },
     kovan: {
@@ -62,15 +62,15 @@ module.exports = {
       skipDryRun: true,
       provider() {
         return new HDWalletProvider(
-          process.env.TESTNET_MNEMONIC,
-          'https://rinkeby.infura.io/v3/' + process.env.INFURA_API_KEY,
-          0,
-          10
+         process.env.TESTNET_MNEMONIC,
+         'https://rinkeby.infura.io/v3/' + process.env.INFURA_API_KEY,
+         2,
+         10
         )
       },
       network_id: 4,
       // gas: 4700000,
-      gasPrice: 100000000000 // 200 GWEI
+      gasPrice: 25000000000 // 25 GWEI
     },
     ropsten: {
       provider() {
