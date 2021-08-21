@@ -1,10 +1,22 @@
 require('dotenv').config()
+const { createProvider } = require('@rarible/trezor-provider')
 
 const HDWalletProvider = require('truffle-hdwallet-provider')
 
 module.exports = {
+  plugins: [
+    'truffle-plugin-verify'
+  ],
+  api_keys: {
+    etherscan: process.env.ETHERSCAN_API_KEY
+  },
   solc: {
-    // version: "0.4.25"
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 1500
+      }
+    }
   },
   networks: {
     develop: {
@@ -61,6 +73,11 @@ module.exports = {
     rinkeby: {
       skipDryRun: true,
       provider() {
+        //return createProvider({
+        //  url: 'https://rinkeby.infura.io/v3/' + process.env.INFURA_API_KEY,
+        //  path: "m/44'/60'/0'/0/1",
+        //  chainId: 4,
+        //})
         return new HDWalletProvider(
          process.env.TESTNET_MNEMONIC,
          'https://rinkeby.infura.io/v3/' + process.env.INFURA_API_KEY,

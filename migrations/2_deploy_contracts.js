@@ -5,13 +5,13 @@ var voucherAddrs = require("./vouchers")
 
 let _ = "        ";
 
-// // rinkeby addrs
-// const artistaddr = "0x7742DbD51E98D1809A9Cd749ab71Af61e899C442"
-// const adminaddr = "0x8f6dE19720B64800382124c41556EC4580Ff4234"
+// mainnet addrs
+const artistAddr = "0x7742DbD51E98D1809A9Cd749ab71Af61e899C442"
+const adminAddr = "0x8f6dE19720B64800382124c41556EC4580Ff4234"
 
-// rinkeby addrs
-const artistAddr = "0x7645eb8cf60d54b0460b0d8e931d99c63c2de78e"
-const adminAddr = "0x3c1a329586e28b960c01e3edae037c05316a2413"
+// // rinkeby addrs
+// const artistAddr = "0x7645eb8cf60d54b0460b0d8e931d99c63c2de78e"
+// const adminAddr = "0x3c1a329586e28b960c01e3edae037c05316a2413"
 
 module.exports = (deployer, helper, accounts) => {
   deployer.then(async () => {

@@ -21,7 +21,7 @@ import "./Metadata.sol";
 //   :: : :     :: :: :   :   : :   :      :     :      :    : :: ::    :   : :
 //
 // .. SCAMMER.MARKET .. 2021
-// .. AMNESIA SCANNER .. PWR .. WURMHUMMUSFABRIK
+// .. AMNESIA SCANNER .. PWR .. WURMHUMUSFABRIK MARIPOSA
 //
 // : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : :
 **/
