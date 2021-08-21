@@ -44,6 +44,8 @@ module.exports = {
       // gasPrice: 1000000000
     },
     mainnet: {
+      networkCheckTimeout: 999999,
+      skipDryRun: true,
       provider() {
         return new HDWalletProvider(
           process.env.MAINNET_MNEMONIC,
@@ -54,7 +56,7 @@ module.exports = {
         )
       },
       network_id: 1,
-      gasPrice: 25000000000, // 25 GWEI
+      gasPrice: 80000000000, // 25 GWEI
       gas: 6721975
     },
     kovan: {
