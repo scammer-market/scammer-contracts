@@ -1,10 +1,12 @@
 const ScammerController = artifacts.require("ScammerController");
+const Scammer = artifacts.require("Scammer");
 
 module.exports = async function (callback) {
 	try {
 		const accounts = await web3.eth.getAccounts();
 
 		let controller = await ScammerController.deployed()
+		let token = await Scammer.deployed()
 		console.log("ScammerController found: " + controller.address)
 
 		// mints 500 collection (tokenIds 1000001 to 1000500) as paused
@@ -12,8 +14,8 @@ module.exports = async function (callback) {
 		console.log("Minted new collection.")
 
 		// unpauses collection
-		await controller.updateCollectionPaused(1, false);
-		console.log("Unpaused collection.")
+		await controller.setVoucherOnlyMode(1);
+		console.log("Enable voucher only mode.")
 
 
 		// mint vault vouchers
@@ -23,17 +25,20 @@ module.exports = async function (callback) {
 		var tokenIds = [];
 		while(tokenIds.length < 56){
 		    var r = Math.floor(Math.random() * 555) + 1000000;
-		    if(tokenIds.indexOf(r) === -1) tokenIds.push(r);
+		    const tokenExists = await token.exists(r);
+		    if(tokenIds.indexOf(r) === -1 && !tokenExists ) tokenIds.push(r);
 		}
 
+		let i = 0;
+		let size = tokenIds.length;
 		for (const tokenId of tokenIds) {
-			console.log("Redeemed Token #" + tokenId)
+
+			
+			console.log("Redeemed Token #" + tokenId + `(${i} of ${size})`)
 
 			// // redeem vault vouchers (MAINNET ADDRESS)
-			controller.redeem("0xCD4A05Ea925af76fe31Ce955bFEFDe3B634FF1dD", tokenId)
-
-			// redeem vault vouchers (RINKEBY ADDRESS)
-			// await controller.redeem("0xA7E34d0d79f61AD5F18Ae105409fBF04194b76aC", tokenId)
+			await controller.redeem("0xCD4A05Ea925af76fe31Ce955bFEFDe3B634FF1dD", tokenId)
+			i = i+1;
 		}
 	} catch (error) {
 		return callback(error)

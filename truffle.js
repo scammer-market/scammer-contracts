@@ -39,7 +39,7 @@ module.exports = {
       },
       host: 'localhost',
       port: 7545,
-      network_id: 5777,
+      network_id: 1337,
       // gas: 10000000,
       // gasPrice: 1000000000
     },
@@ -56,8 +56,8 @@ module.exports = {
         )
       },
       network_id: 1,
-      gasPrice: 80000000000, // 25 GWEI
-      gas: 6721975
+      gasPrice: 60000000000, // 25 GWEI
+      gas: 500000
     },
     kovan: {
       provider() {
